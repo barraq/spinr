@@ -1,6 +1,6 @@
 {
   "name": "spinr",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Minimalist Task Runner for Node",
   "author": "Remi Barraquand",
   "license": "MIT",
