@@ -22,7 +22,8 @@
     "build:watch": "rimraf dist && babel lib --out-dir dist --watch --source-maps",
     "pretest": "yarn run lint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch --coverage"
+    "test:watch": "jest --watch --coverage",
+    "prepublish": "yarn run build"
   },
   "babel": {
     "presets": [
