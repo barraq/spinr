@@ -1,5 +1,8 @@
 # Spinr
 
+[![Build](https://travis-ci.org/barraq/spinr.svg?branch=master)](https://travis-ci.org/barraq/spinr)
+[![Coverage](https://coveralls.io/repos/github/barraq/spinr/badge.svg)](https://coveralls.io/github/barraq/spinr)
+
 Minimalist task runner for [Node](https://nodejs.org/) that leverage the power of ES6 and ES7.
 
 ## Installation
