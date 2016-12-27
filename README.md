@@ -58,7 +58,7 @@ Launch `clean` then `build`:
 $ spin clean build
 ```
 
-Launch `lint` in parallel of `clean` then `run`:
+Launch `clean` then `build` in parallel of `lint`:
 
 ``` shell
 $ spin --parallel clean+build lint
