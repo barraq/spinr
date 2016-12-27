@@ -4,9 +4,9 @@
   "description": "Minimalist Task Runner for Node",
   "author": "Remi Barraquand",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/barraq/spinr.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barraq/spinr.git"
   },
   "bin": {
     "spin": "./bin/spinr.js"
