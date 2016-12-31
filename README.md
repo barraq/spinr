@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/barraq/spinr">
-    <img alt="Spinr" src="https://github.com/barraq/spinr/blob/master/assets/spinr-logo.png" />
+    <img alt="Spinr" src="https://github.com/barraq/spinr/blob/master/assets/spinr-logo.png?raw=true" />
   </a>
 </p>
 
