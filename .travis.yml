@@ -4,5 +4,6 @@ cache: yarn
 node_js:
   - stable
   - '6'
+after_success: yarn run coveralls
 git:
   depth: 10
