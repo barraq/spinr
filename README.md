@@ -1,9 +1,20 @@
-# Spinr
+<p align="center">
+  <a href="https://github.com/barraq/spinr">
+    <img alt="Spinr" src="https://github.com/barraq/spinr/blob/master/assets/spinr-logo.png" />
+  </a>
+</p>
 
-[![Build](https://travis-ci.org/barraq/spinr.svg?branch=master)](https://travis-ci.org/barraq/spinr)
-[![Coverage](https://coveralls.io/repos/github/barraq/spinr/badge.svg)](https://coveralls.io/github/barraq/spinr)
+<p align="center">
+Minimalist task runner for Node that leverage the power of ES6 and ES7<br/>
+<small>#NoPlugin #NoAbstraction</small>
+</p>
 
-Minimalist task runner for [Node](https://nodejs.org/) that leverage the power of ES6 and ES7.
+<p align="center">
+<a href="https://travis-ci.org/barraq/spinr"><img src="https://travis-ci.org/barraq/spinr.svg?branch=master" alt="Build" title="Travis Status" /></a>
+<a href="https://coveralls.io/github/barraq/spinr"><img src="https://coveralls.io/repos/github/barraq/spinr/badge.svg" alt="Coverage" title="Coverage Status" /></a>
+</p>
+
+---
 
 ## Installation
 
@@ -11,12 +22,13 @@ Minimalist task runner for [Node](https://nodejs.org/) that leverage the power o
 $ yarn add spinr
 ```
 
-## Feature
+## Features
 
-- Leverage power of ES6 and ES7
-- Run parallel, sequential tasks
+- Leverage the power of ES6 and ES7
 - Support async, stream, promise, callback
-- Easy extend with custom parameters
+- Run parallel, sequential tasks
+- Extend with custom parameters
+- No abstraction, no plugins
 - Super easy to use
 
 ## Usage
@@ -31,6 +43,9 @@ Example `spinfile.js`:
 import del from 'del';
 import { rollup } from 'rollup';
 
+import config from './config';
+import deployer from './tasks/deploy';
+
 // $ spin clean
 export async function clean() {
   await del(['build']);
@@ -38,17 +53,19 @@ export async function clean() {
 
 // $ spin build
 export async function build() {
-  await rollup({ /* options */}).then((bundle) => {
-    return bundle.write(options);
+  await Promise.all(config.bundles.map(bundle => {
+    return rollup(bundle.options).then(output => {
+      return output.write(options);
+    });
   });
 }
 
 // $ spin deploy
-export async function deploy() {
-  await doTheDeploy();
+export async function deploy({ from = 'master', to = 'origin/gh-pages' }) {
+  await deployer.deploy(from, to);
 }
 
-// $ spin
+// (default) $ spin
 export async default build;
 ```
 
@@ -64,7 +81,7 @@ Launch `clean` then `build` in parallel of `lint`:
 $ spin --parallel clean+build lint
 ```
 
-## Documentation
+## Learn more
 
 - [Command Line Interface](#command-line-interface)
 - [Task definition](#task-definition)
