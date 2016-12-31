@@ -12,6 +12,7 @@ Minimalist task runner for Node that leverage the power of ES6 and ES7<br/>
 <p align="center">
 <a href="https://travis-ci.org/barraq/spinr"><img src="https://travis-ci.org/barraq/spinr.svg?branch=master" alt="Build" title="Travis Status" /></a>
 <a href="https://coveralls.io/github/barraq/spinr"><img src="https://coveralls.io/repos/github/barraq/spinr/badge.svg" alt="Coverage" title="Coverage Status" /></a>
+<a href="https://snyk.io/test/github/barraq/spinr"><img src="https://snyk.io/test/github/barraq/spinr/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/barraq/spinr" style="max-width:100%;"></a>
 </p>
 
 ---
