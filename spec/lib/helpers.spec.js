@@ -10,8 +10,6 @@ import {
 const pkg = './spec/fixture/babel/package.json';
 const babelrc = './spec/fixture/babel/babelrc';
 
-global.Date.prototype.toTimeString = jest.genMockFunction().mockReturnValue('11:49:17 GMT+0100 (CET)');
-
 describe('helpers', () => {
   describe(loadBabelConfigFrom.name, () => {
     it('Loads configuration from package.json', () => {
@@ -64,8 +62,23 @@ describe('helpers', () => {
   });
 
   describe(timestamp.name, () => {
-    it('returns correct timestamp', () => {
+    let toTimeString;
+
+    beforeEach(() => {
+      toTimeString = global.Date.prototype.toTimeString;
+      global.Date.prototype.toTimeString = jest.genMockFunction().mockReturnValue('11:49:17 GMT+0100 (CET)');
+    });
+
+    it('returns correct timestamp for default date', () => {
       expect(timestamp()).toEqual('11:49:17');
+    });
+
+    it('returns correct timestamp for custom date', () => {
+      expect(timestamp({ date: new Date() })).toEqual('11:49:17');
+    });
+
+    afterEach(() => {
+      global.Date.prototype.toTimeString = toTimeString;
     });
   });
 
