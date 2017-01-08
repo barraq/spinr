@@ -1,0 +1,35 @@
+exports[`Logger error with custom aside output formatted message with aside 1`] = `
+Array [
+  Array [
+    "[31maside[39m message
+",
+  ],
+]
+`;
+
+exports[`Logger info with custom aside output formatted message with aside 1`] = `
+Array [
+  Array [
+    "[34maside[39m message
+",
+  ],
+]
+`;
+
+exports[`Logger time with custom aside output formatted message with aside 1`] = `
+Array [
+  Array [
+    "[1maside[22m message
+",
+  ],
+]
+`;
+
+exports[`Logger warn with custom aside output formatted message with aside 1`] = `
+Array [
+  Array [
+    "[36maside[39m message
+",
+  ],
+]
+`;
