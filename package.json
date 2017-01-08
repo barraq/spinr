@@ -47,7 +47,7 @@
     }
   },
   "jest": {
-    "testRegex": "/spec/lib/.*|(\\.|/)spec\\.js$"
+    "testRegex": "/spec/lib/.*\\.spec\\.js$"
   },
   "dependencies": {
     "babel-plugin-transform-async-to-generator": "^6.16.0",
