@@ -24,7 +24,8 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls --verbose",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run snyk-protect && yarn run build",
+    "snyk-protect": "snyk protect"
   },
   "babel": {
     "presets": [
@@ -61,7 +62,8 @@
     "stream-to-promise": "^2.2.0",
     "subdir": "^0.0.3",
     "tildify": "^1.2.0",
-    "yargs": "^6.5.0"
+    "yargs": "^6.5.0",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -76,5 +78,6 @@
   },
   "engines": {
     "node": ">=6.0.0"
-  }
+  },
+  "snyk": true
 }
