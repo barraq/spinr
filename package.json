@@ -61,7 +61,7 @@
     "stream-to-promise": "^2.2.0",
     "subdir": "^0.0.3",
     "tildify": "^1.2.0",
-    "yargs": "^6.5.0"
+    "yargs": "^7.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
